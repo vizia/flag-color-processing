@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Flags – Demo</title>
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=no" />
+        <script src="demo.js" async defer></script>
+        <style>
+            * { padding: 0; border: 0; margin: 0; box-sizing: border-box; }
+            html, body, #bundle-container { height: 100%; }
+            body {
+                background-color: #36363b;
+                color: #e5e5ea;
+                font-family: Roboto, sans-serif;
+            }
+            .flag-list {
+                max-width: 60em;
+                margin: 4em auto;
+            }
+            .flag-comparison {
+                text-align: center;
+                margin-right: 1em;
+                margin-left: 1em;
+            }
+            .flag-comparison:not(:last-of-type) {
+                margin-bottom: 2em;
+            }
+            .flag-comparison__header {
+                font-size: 3em;
+                font-weight: 200;
+            }
+            .flag-comparison__body {
+                display: flex;
+                justify-content: center;
+            }
+            .flag {
+                display: flex;
+                justify-content: center;
+                padding: 2em;
+                flex: 1;
+            }
+            .flag__media {
+                position: relative;
+                width: 100%;
+                padding-bottom: 100%;
+            }
+            .flag img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+            img {
+                display: block;
+                max-width: 100%;
+            }
+        </style>
+    </head>
+    <body class="vc-text vc-tile-bg">
+        <div id="bundle-container"></div>
+    </body>
+</html>
