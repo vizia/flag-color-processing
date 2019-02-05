@@ -1,19 +1,14 @@
-# Flag Color Processing
+# Flags
 
-Assigns brand palette to SVG flags.
+Assets map for branded flags.
 
-### Setting colors
-
-Replace the color values in [](src/lib/palette.js).
-
-### Processing the flags
+### Build
 
 ```sh
-npm install
-npm run process-flags
+npm run build
 ```
 
-The flag SVGs will be output to the [](public) folder in both 1x1 and 4x3 aspect ratios.
+The flag SVGs will be output to the [](public) folder in both 1x1 and 4x3 aspect ratios, with a JSON map of metadata.
 
 ### Running the demo
 

@@ -1,8 +1,10 @@
 {
     "extends": "@vizia/eslint-config/ES2015",
     "env": {
-        "browser": true,
         "commonjs": true,
         "node": true
+    },
+    "rules": {
+        "no-console": "off"
     }
 }

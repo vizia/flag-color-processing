@@ -1,21 +1,22 @@
 'use strict';
 
-const ratioPath = '1x1';
-const flagList = require('../public/1x1/flags');
+const flagList = require('../public/flags');
 
 function flagTemplate(flag) {
+    const flagSrc = flag.src['1x1'];
+
     return `
         <div class="flag-comparison">
-            <div class="flag-comparison__header">${flag}</div>
+            <div class="flag-comparison__header" style="background-color: ${flag.color};">${flag.id}</div>
             <div class="flag-comparison__body">
                 <div class="flag">
                     <div class="flag__media">
-                        <img src="/flag-svg-collection/flags/${ratioPath}/${flag}" />
+                        <img src="/flag-svg-collection/flags/${flagSrc}" />
                     </div>
                 </div>
                 <div class="flag">
                     <div class="flag__media">
-                        <img src="/${ratioPath}/${flag}" />
+                        <img src="/${flagSrc}" />
                     </div>
                 </div>
             </div>
