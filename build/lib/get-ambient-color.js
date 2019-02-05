@@ -10,13 +10,11 @@ const baseColorValues = palette.base.map((color) => new Color(color).toString())
 function getAmbientColor(colors) {
     const ambientColor = colors
         .map((color) => new Color(color))
-        .filter((color) => {
-            return !baseColorValues.includes(color.toString());
-        })
+        .filter((color) => !baseColorValues.includes(color.toString()) && color.luminosity() <= 0.5)
         .sort((colorA, colorB) => colorA.luminosity() - colorB.luminosity())
         .find((color) => color);
 
-    if (ambientColor && ambientColor.luminosity() <= 0.5) {
+    if (ambientColor) {
         return ambientColor.toString();
     }
     return getNearestColor('#000000');
