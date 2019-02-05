@@ -2,40 +2,58 @@
 
 const jsdom = require('jsdom');
 
+const getAmbientColor = require('./get-ambient-color');
 const getNearestColor = require('./get-nearest-color');
 
-function setFill(node) {
+function getFill(node) {
     const fill = node.getAttribute('fill');
 
     if (fill) {
         if (!fill.includes('none') && !fill.includes('url')) {
-            node.setAttribute('fill', getNearestColor(fill));
+            return getNearestColor(fill);
         }
     } else if (node.parentNode.tagName === 'svg') {
-        node.setAttribute('fill', getNearestColor('#000'));
+        return getNearestColor('#000000');
     }
 }
 
-function setStroke(node) {
+function getStroke(node) {
     const stroke = node.getAttribute('stroke');
 
     if (stroke) {
         if (!stroke.includes('none')) {
-            node.setAttribute('stroke', getNearestColor(stroke));
+            return getNearestColor(stroke);
         }
     }
 }
 
-function getProcessedFlag(input) {
+function getProcessedSvg(input) {
     const dom = new jsdom.JSDOM(input);
     const svg = dom.window.document.querySelector('svg');
+    const colors = [];
 
     svg.querySelectorAll('*').forEach((node) => {
-        setFill(node);
-        setStroke(node);
+        const fill = getFill(node);
+        const stroke = getStroke(node);
+
+        if (fill) {
+            node.setAttribute('fill', fill);
+            colors.push(fill);
+        }
+
+        if (stroke) {
+            node.setAttribute('stroke', stroke);
+        }
     });
 
-    return svg.outerHTML;
+    return {
+        svg: svg.outerHTML,
+        color: getAmbientColor(colors)
+    };
+}
+
+function getProcessedFlag(input) {
+    return getProcessedSvg(input);
 }
 
 module.exports = getProcessedFlag;

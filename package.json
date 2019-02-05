@@ -7,11 +7,11 @@
     "start": "npm run build && npm run demo",
     "build": "node build/index.js",
     "demo": "budo demo/demo.js --dir demo --dir public --dir node_modules -- --debug",
-    "prepublish": "npm run build"
+    "prepublishOnly": "npm run build"
   },
   "files": [
-      "/src",
-      "/public"
+    "/src",
+    "/public"
   ],
   "repository": "github:vizia/flags",
   "homepage": "https://github.com/vizia/flags#readme",
@@ -28,7 +28,7 @@
     "eslint": "^4.17",
     "flag-svg-collection": "^1.1.0",
     "fs-extra": "^5.0.0",
-    "jsdom": "^11.6.2",
+    "jsdom": "^13",
     "nearest-color": "^0.4.2"
   }
 }

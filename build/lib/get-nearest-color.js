@@ -12,7 +12,7 @@ function getColor(value) {
     const color = new Color(value).hsl();
 
     // Use nearest base color if the lightness is too dark/light
-    if (color.color[2] < 15 || color.color[2] > 85) {
+    if ((color.color[2] < 15 || color.color[2] > 85)) {
         return getNearestBaseColor(color.rgb().toString());
     }
 
