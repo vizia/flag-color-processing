@@ -1,6 +1,6 @@
 {
   "name": "@vizia-assets/flags",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Flags – Assets map for branded flags.",
   "main": "src/index.js",
   "scripts": {
