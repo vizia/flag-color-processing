@@ -1,5 +1,5 @@
 {
-  "name": "@vizia/flags",
+  "name": "@vizia-assets/flags",
   "version": "0.0.1",
   "description": "Flags – Assets map for branded flags.",
   "main": "src/index.js",
