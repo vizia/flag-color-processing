@@ -8,7 +8,9 @@
     "build": "node build/index.js",
     "demo": "budo demo/demo.js --dir demo --dir public --dir node_modules -- --debug",
     "prepublishOnly": "npm run build",
-    "test": "ava ./test/src/**/*.test.js --verbose --color"
+    "lint": "eslint .",
+    "test": "ava ./test/src/**/*.test.js --verbose --color",
+    "ci": "npm run test && npm run lint"
   },
   "files": [
     "/src",

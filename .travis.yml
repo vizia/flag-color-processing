@@ -1,0 +1,5 @@
+language: node_js
+script:
+  - npm run ci
+before_install:
+  - echo -e "//registry.brandwatch.npme.io/:_authToken=${NPM_TOKEN}\n@vizia:registry=https://registry.brandwatch.npme.io" > .npmrc

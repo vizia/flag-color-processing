@@ -3,8 +3,8 @@
 const flags = require('../public/flags');
 
 function getFlag(id, props = {}) {
-    const countryCode = id === 'uk' ? 'gb' : id;
     const {viziaAssetsPath = '@vizia-assets'} = props;
+    const countryCode = id === 'uk' ? 'gb' : id;
     const flag = flags.find((flag) => flag.id === countryCode);
 
     if (!flag) {
