@@ -65,3 +65,13 @@ test('Resolves gb flag as uk', (t) => {
         'gb'
     );
 });
+
+test('Resolves ISO3 USA flag as us', (t) => {
+    const getFlag = requireGetFlag();
+    const result = getFlag('USA');
+
+    t.is(
+        result.id,
+        'us'
+    );
+});
