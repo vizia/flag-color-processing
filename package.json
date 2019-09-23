@@ -22,9 +22,11 @@
     "url": "https://github.com/vizia/flags/issues"
   },
   "license": "UNLICENSED",
-  "dependencies": {},
+  "dependencies": {
+    "country-iso-3-to-2": "^1.0.1"
+  },
   "devDependencies": {
-    "@brandwatch/axiom-materials": "^1.12.0",
+    "@brandwatch/axiom-materials": "^1.22.0",
     "@vizia/eslint-config": "^2.0.3",
     "ava": "^1.2.1",
     "budo": "^11.6.0",

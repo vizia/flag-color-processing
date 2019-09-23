@@ -1,10 +1,12 @@
 'use strict';
 
 const flags = require('../public/flags');
+const getCountryISO2 = require('country-iso-3-to-2');
 
 function getFlag(id, props = {}) {
     const {viziaAssetsPath = '@vizia-assets'} = props;
-    const countryCode = id === 'uk' ? 'gb' : id;
+    const iso2 = (id.length === 3 ? getCountryISO2(id) : id).toLowerCase();
+    const countryCode = iso2 === 'uk' ? 'gb' : iso2;
     const flag = flags.find((flag) => flag.id === countryCode);
 
     if (!flag) {
