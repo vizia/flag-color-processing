@@ -5,9 +5,9 @@ const getCountryISO2 = require('country-iso-3-to-2');
 
 function getFlag(id, props = {}) {
     const {viziaAssetsPath = '@vizia-assets'} = props;
-    const iso2 = (id.length === 3 ? getCountryISO2(id) : id).toLowerCase();
-    const countryCode = iso2 === 'uk' ? 'gb' : iso2;
-    const flag = flags.find((flag) => flag.id === countryCode);
+    const iso2 = id.length === 3 ? (getCountryISO2(id) || id) : id;
+    const countryCode = iso2 === 'uk' ? 'gb' : iso2 || 'unknown';
+    const flag = flags.find((flag) => flag.id === countryCode.toLowerCase());
 
     if (!flag) {
         return null;
