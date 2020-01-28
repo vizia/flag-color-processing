@@ -1,41 +1,45 @@
 {
-  "name": "@vizia-assets/flags",
-  "version": "2.1.0",
-  "description": "Flags – Assets map for branded flags.",
-  "main": "src/index.js",
-  "scripts": {
-    "start": "npm run build && npm run demo",
-    "build": "node build/index.js",
-    "demo": "budo demo/demo.js --dir demo --dir public --dir node_modules -- --debug",
-    "prepublishOnly": "npm run build",
-    "lint": "eslint .",
-    "test": "ava ./test/src/**/*.test.js --verbose --color",
-    "ci": "npm run build && npm run test && npm run lint"
-  },
-  "files": [
-    "/src",
-    "/public"
-  ],
-  "repository": "github:vizia/flags",
-  "homepage": "https://github.com/vizia/flags#readme",
-  "bugs": {
-    "url": "https://github.com/vizia/flags/issues"
-  },
-  "license": "UNLICENSED",
-  "dependencies": {
-    "country-iso-3-to-2": "^1.0.1"
-  },
-  "devDependencies": {
-    "@brandwatch/axiom-materials": "^1.22.0",
-    "@vizia/eslint-config": "^2.0.3",
-    "ava": "^1.2.1",
-    "budo": "^11.6.0",
-    "color": "^3.0.0",
-    "eslint": "^4.17",
-    "flag-svg-collection": "^1.1.0",
-    "fs-extra": "^5.0.0",
-    "jsdom": "^13",
-    "nearest-color": "^0.4.2",
-    "sandboxed-module": "^2.0.3"
-  }
+    "name": "@vizia-assets/flags",
+    "version": "2.1.1",
+    "description": "Flags – Assets map for branded flags.",
+    "main": "src/index.js",
+    "scripts": {
+        "start": "npm run build && npm run demo",
+        "build": "node build/index.js",
+        "demo": "budo demo/demo.js --dir demo --dir public --dir node_modules -- --debug",
+        "prepublishOnly": "npm run build",
+        "lint": "eslint .",
+        "test": "ava ./test/src/**/*.test.js --verbose --color",
+        "ci": "npm run build && npm run test && npm run lint",
+        "postpublish": "./scripts/ci-gstorage.sh"
+    },
+    "files": [
+        "/src",
+        "/public"
+    ],
+    "repository": "github:vizia/flags",
+    "homepage": "https://github.com/vizia/flags#readme",
+    "bugs": {
+        "url": "https://github.com/vizia/flags/issues"
+    },
+    "publishConfig": {
+        "registry": "https://artifactory.brandwatch.com/artifactory/api/npm/npm"
+    },
+    "license": "UNLICENSED",
+    "dependencies": {
+        "country-iso-3-to-2": "^1.0.1"
+    },
+    "devDependencies": {
+        "@brandwatch/axiom-materials": "^1.22.0",
+        "@vizia/eslint-config": "^2.0.3",
+        "ava": "^1.2.1",
+        "budo": "^11.6.0",
+        "color": "^3.0.0",
+        "eslint": "^4.17",
+        "flag-svg-collection": "^1.1.0",
+        "fs-extra": "^5.0.0",
+        "jsdom": "^13",
+        "nearest-color": "^0.4.2",
+        "sandboxed-module": "^2.0.3"
+    }
 }

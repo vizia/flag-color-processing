@@ -1,5 +1,11 @@
 language: node_js
-script:
-  - npm run ci
 before_install:
-  - echo -e "//registry.brandwatch.npme.io/:_authToken=${NPM_TOKEN}\n@vizia:registry=https://registry.brandwatch.npme.io" > .npmrc
+    - npx artifactory-npm-setup https://artifactory.brandwatch.com --no-interactive -s @vizia -s @vizia-assets -s @brandwatch -a ${ARTIFACTORY_TOKEN} -u vizia-bot
+script:
+    - npm run ci
+jobs:
+  include:
+    - if: type IS NOT pull_request AND branch = master AND commit_message !~ "chore(release)"
+      script:
+        - npx artifactory-npm-setup https://artifactory.brandwatch.com --no-interactive -s @vizia -s @vizia-assets -s @brandwatch -a ${ARTIFACTORY_TOKEN} -u vizia-bot
+        - ./scripts/ci-publish.sh
