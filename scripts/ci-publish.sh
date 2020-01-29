@@ -6,5 +6,5 @@ npx standard-version
 
 npm publish
 
-git remote add auth-remote https://${GH_TOKEN}@github.com:vizia/flags.git
+git remote add auth-remote https://${GH_TOKEN}@github.com/vizia/flags.git
 git push auth-remote master && git push auth-remote master --tags
