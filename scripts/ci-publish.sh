@@ -6,6 +6,5 @@ npx standard-version
 
 npm publish
 
-git push origin master && git push origin master --tags
-Username: "Vizia CI Bot"
-Password: ${GH_TOKEN}
+git remote add auth-remote https://${GH_TOKEN}@github.com:vizia/flags.git
+git push auth-remote master && git push auth-remote master --tags
