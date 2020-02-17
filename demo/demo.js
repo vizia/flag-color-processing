@@ -1,5 +1,7 @@
 'use strict';
 
+require('@vizia/vizia-css/build/vizia-style.min.css');
+
 const flagList = require('../public/flags');
 
 function flagTemplate(flag) {

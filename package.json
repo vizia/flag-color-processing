@@ -6,7 +6,7 @@
     "scripts": {
         "start": "npm run build && npm run demo",
         "build": "node build/index.js",
-        "demo": "budo demo/demo.js --dir demo --dir public --dir node_modules -- --debug",
+        "demo": "budo demo/demo.js --dir demo --dir public --dir node_modules -- --global-transform browserify-css --debug",
         "prepublishOnly": "npm run build",
         "lint": "eslint .",
         "test": "ava ./test/src/**/*.test.js --verbose --color",
@@ -27,19 +27,21 @@
     },
     "license": "UNLICENSED",
     "dependencies": {
-        "country-iso-3-to-2": "^1.0.1"
+        "country-iso-3-to-2": "^1.1.0"
     },
     "devDependencies": {
-        "@brandwatch/axiom-materials": "^1.22.0",
+        "@brandwatch/axiom-materials": "^1.26.3",
         "@vizia/eslint-config": "^2.0.3",
+        "@vizia/vizia-css": "^4.0.2",
         "ava": "^1.2.1",
+        "browserify-css": "^0.15.0",
         "budo": "^11.6.0",
         "color": "^3.0.0",
         "eslint": "^4.17",
         "flag-svg-collection": "^1.1.0",
         "fs-extra": "^5.0.0",
         "jsdom": "^13",
-        "nearest-color": "^0.4.2",
+        "nearest-color": "^0.4.4",
         "sandboxed-module": "^2.0.3"
     }
 }

@@ -1,16 +1,19 @@
 'use strict';
 
-const axiomPalette = require('@brandwatch/axiom-materials/dist/colors');
+const axiomPalette = require('@brandwatch/axiom-materials/dist/cjs/colors');
 
 module.exports = {
     base: [
-        axiomPalette.uiCarbonDarker,
+        axiomPalette.uiBlack,
         axiomPalette.uiWhiteNoise
     ],
-    brand: Object.values(axiomPalette.productColors)
-        // Add additional colours to fill the gaps (e.g. red, navy)
-        .concat(...[
-            axiomPalette.sentimentNegativeActive,
-            axiomPalette.socialFacebookActive
-        ])
+    brand: [].concat(
+        Object.values(axiomPalette.productColors),
+        Object.values(axiomPalette.productActiveColors),
+        Object.values(axiomPalette.productHoverColors),
+        // Red
+        axiomPalette.sentimentNegativeActive,
+        // Navy
+        axiomPalette.socialTumblrHover
+    )
 };
