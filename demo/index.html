@@ -4,14 +4,15 @@
         <meta charset="UTF-8" />
         <title>Flags – Demo</title>
         <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=no" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet" />
         <script src="demo.js" async defer></script>
         <style>
             * { padding: 0; border: 0; margin: 0; box-sizing: border-box; }
             html, body, #bundle-container { height: 100%; }
             body {
-                background-color: #36363b;
-                color: #e5e5ea;
-                font-family: Roboto, sans-serif;
+                background-color: var(--viz-color-bg);
+                color: var(--viz-color-base);
+                font-family: var(--viz-type-face-base);
             }
             .flag-list {
                 max-width: 60em;
@@ -62,7 +63,7 @@
             }
         </style>
     </head>
-    <body class="vc-text vc-tile-bg">
+    <body>
         <div id="bundle-container"></div>
     </body>
 </html>
