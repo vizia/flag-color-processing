@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.1.10](https://github.com/vizia/flags/compare/v2.1.9...v2.1.10) (2020-02-17)
+
+
+### Bug Fixes
+
+* amends color resolving to fix blues resolving to green ([21bfdec](https://github.com/vizia/flags/commit/21bfdecc495420f955731b9ad0e8abb3d792639f))
+
 ### [2.1.9](https://github.com/vizia/flags/compare/v2.1.0...v2.1.9) (2020-01-30)
 
 
