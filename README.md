@@ -20,6 +20,8 @@ A demo server will be available to preview the flag comparisons.
 
 ### Publishing new version
 
+## ⚠️ Publish is broken as Travis is no longer used. Please convert the travis & CI Publish script to a GitHub action if you need to publish new version.
+
 Merging to master will cause Travis to run (as long as the commit is not a `chore(release):`
 Commits MUST be conventional commits.
 Travis will publish the new version to artifactory and push the build to Google Cloud Storage on the prod env in the cdn.brandwatch.com bucket. You'll find the assets at `@vizia-assets`
